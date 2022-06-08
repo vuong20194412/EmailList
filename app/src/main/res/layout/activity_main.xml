@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/text_icon"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#26787878"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/text_check"
+            android:tintMode="multiply"
+            app:srcCompat="@drawable/ic_baseline_check_24"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingEnd="8dp"
+            android:text="@string/text_top"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@android:drawable/ic_notification_clear_all"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="79dp"
+            android:layout_gravity="bottom|end"
+            android:backgroundTint="#2196F3"
+            android:clickable="false"
+            app:srcCompat="@drawable/ic_baseline_create_24"
+            app:useCompatPadding="true"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

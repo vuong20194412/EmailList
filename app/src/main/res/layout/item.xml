@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="84dp"
+    android:padding="2dp"
+    android:background="@drawable/item_container" >
+
+    <TextView
+        android:id="@+id/text_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_icon"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sender"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/text_time"
+        app:layout_constraintEnd_toStartOf="@id/text_time"
+        app:layout_constraintStart_toStartOf="@+id/text_preview"
+        app:layout_constraintTop_toTopOf="@+id/text_time" />
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:textAlignment="viewEnd"
+        app:layout_constraintBottom_toTopOf="@+id/box_favourite"
+        app:layout_constraintEnd_toEndOf="@+id/box_favourite"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/text_preview"
+        app:layout_constraintEnd_toEndOf="@+id/text_preview"
+        app:layout_constraintStart_toStartOf="@+id/text_preview"
+        app:layout_constraintTop_toBottomOf="@+id/text_sender" />
+
+    <TextView
+        android:id="@+id/text_preview"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/box_favourite"
+        app:layout_constraintStart_toEndOf="@+id/text_icon" />
+
+    <CheckBox
+        android:id="@+id/box_favourite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:button="@drawable/checkbox_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

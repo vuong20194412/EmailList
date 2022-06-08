@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EmailList</string>
+    <string name="text_top">Touch a sender image to select that conversation.</string>
+</resources>
