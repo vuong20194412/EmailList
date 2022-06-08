@@ -2,7 +2,7 @@ package com.example.emaillist;
 
 public class ArrayData {
 
-    static Data[] dataArray = new Data[]{
+    private final Data[] dataArray = new Data[]{
             new Data("Admin", "00:00Am", "aob job job job job job job job job aob job job jo", "boj -=----boj boj boj boj boj boj boj boj boj boj"),
             new Data("Bdmin", "00:01Am", "bob job job job job job job job job aob job job jo", "boj boj boj bojfwqersfa boj boj boj boj boj boj boj"),
             new Data("Cdmin", "00:02Am", "cob job job job job job job job job aob job job jo", "boj boj boj boafsafdj boj boj boj boj boj boj boj"),
@@ -54,7 +54,7 @@ public class ArrayData {
             new Data("Yzdmin", "00:48Am", "job jtutyutuob job job job job job job job", "boj boj b98241739oj boj boj boj boj boj boj boj boj"),
             new Data("Abcdmin", "00:49Am", "job job jobuttutru job job job job job job", "boj boj b8241370984oj boj boj boj boj boj boj boj boj"),
     };
-    static int[] colorArray = new int[]{
+    private final int[] colorArray = new int[]{
             0xFFFF0000,
             0xFF00FF00,
             0xFF0000FF,
@@ -80,4 +80,12 @@ public class ArrayData {
             0xFFFF0080,
             0xFFFF0040
     };
+
+    public Data[] getDataArray() {
+        return dataArray;
+    }
+
+    public int[] getColorArray() {
+        return colorArray;
+    }
 }

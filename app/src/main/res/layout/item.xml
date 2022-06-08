@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="84dp"
     android:padding="2dp"
-    android:background="@drawable/item_container" >
+    android:background="@drawable/container" >
+
+    <CheckBox
+        android:id="@+id/box_favourite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:button="@drawable/star_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/text_icon"
@@ -56,20 +65,9 @@
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/box_favourite"
         app:layout_constraintStart_toEndOf="@+id/text_icon" />
-
-    <CheckBox
-        android:id="@+id/box_favourite"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="5dp"
-        android:button="@drawable/checkbox_star"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

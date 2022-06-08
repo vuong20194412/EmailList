@@ -25,4 +25,13 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
         text_preview = itemView.findViewById(R.id.text_preview);
         box_favourite = itemView.findViewById(R.id.box_favourite);
     }
+
+    public void setText(@NonNull Item item) {
+        text_icon.setText(String.valueOf(item.sender.charAt(0)));
+        text_icon.setBackground(item.drawable);
+        text_sender.setText(item.sender);
+        text_time.setText(item.time);
+        text_title.setText(item.title);
+        text_preview.setText(item.preview);
+    }
 }

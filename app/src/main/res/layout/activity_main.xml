@@ -21,7 +21,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/text_check"
             android:tintMode="multiply"
-            app:srcCompat="@drawable/ic_baseline_check_24"
+            app:srcCompat="@drawable/check"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -53,7 +53,7 @@
             android:layout_gravity="bottom|end"
             android:backgroundTint="#2196F3"
             android:clickable="false"
-            app:srcCompat="@drawable/ic_baseline_create_24"
+            app:srcCompat="@drawable/create"
             app:useCompatPadding="true"
             tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 

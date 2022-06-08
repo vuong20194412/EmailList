@@ -10,14 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
-    Data[] arrayData = ArrayData.dataArray;
-    int[] colors = ArrayData.colorArray;
-    @SuppressLint("UseCompatLoadingForDrawables")
+    private static CustomAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,31 +21,38 @@ public class MainActivity extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("  Inbox");
-            getSupportActionBar().setIcon(R.drawable.ic_baseline_menu_24);
+            getSupportActionBar().setIcon(R.drawable.menu);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayShowCustomEnabled(true);
         }
 
-        RecyclerView recyclerView = findViewById(R.id.list);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        List<Item> items = new ArrayList<>();
-
-        int len = colors.length;
-        int size = arrayData.length;
-        int index;
-        Drawable drawable;
-        for (int i = 0; i < size; i++) {
-            drawable = getDrawable(R.drawable.text_icon);
-            index = (int) (Math.random() * 1000000) % len;
-            drawable.setColorFilter(colors[index], PorterDuff.Mode.ADD);
-            items.add(new Item(drawable, arrayData[i], i % 2 == 0));
+        if (savedInstanceState == null) {
+            init();
         }
 
-        CustomAdapter adapter = new CustomAdapter(this, items);
-
+        RecyclerView recyclerView = findViewById(R.id.list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void init() {
+        ArrayData dataArray = new ArrayData();
+        Data[] arrayData = dataArray.getDataArray();
+        int[] arrayColor = dataArray.getColorArray();
+        int len = arrayColor.length;
+        Item[] items = new Item[arrayData.length];
+        int i = 0;
+        for (Data data : arrayData) {
+            Drawable drawable = getDrawable(R.drawable.text_icon);
+            int index = (int) (Math.random() * 1024) % len;
+            drawable.setColorFilter(arrayColor[index], PorterDuff.Mode.ADD);
+            items[i] = new Item(drawable, data, index % 2 == 0);
+            i++;
+        }
+
+        adapter = new CustomAdapter(items, getDrawable(R.drawable.star),
+                getDrawable(R.drawable.star_border));
     }
 
     @Override
